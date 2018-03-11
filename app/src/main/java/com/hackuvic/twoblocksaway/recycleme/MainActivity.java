@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.hackuvic.twoblocksaway.recycleme.Map.MapActivity;
+import com.hackuvic.twoblocksaway.recycleme.Total.TotalActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void onMap(View view) {
         Intent navNext = new Intent(this, MapActivity.class);
+        startActivity(navNext);
+    }
+
+    public void onDetails(View view) {
+        Intent navNext = new Intent(this, DetailsActivity.class);
+        startActivity(navNext);
+    }
+
+    public void onTotal(View view) {
+        Intent navNext = new Intent(this, TotalActivity.class);
         startActivity(navNext);
     }
 }
