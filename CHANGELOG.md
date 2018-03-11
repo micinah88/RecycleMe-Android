@@ -7,7 +7,11 @@ All notable changes to this project will be documented in this file.
   - Micole Ong (MO)
   - Philip Choi (PC)
   - Ryan Cha (RC)
-  
+ 
+## [0.4.0]
+### Changed
+  - Implement RecycleMe API
+
 ## [0.3.2]
 ### Changed
   - Add record to database
