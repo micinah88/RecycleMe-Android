@@ -52,6 +52,10 @@ public class RecognitionScoreView extends View implements ResultsView, View.OnCl
         postInvalidate();
     }
 
+    public List<Recognition> getResults() {
+        return this.results;
+    }
+
     @Override
     public void onDraw(final Canvas canvas) {
 
@@ -60,7 +64,7 @@ public class RecognitionScoreView extends View implements ResultsView, View.OnCl
         if (results != null && results.size() > 0) {
             int y = (int) (fgPaint.getTextSize() * 1.4f);
             final Recognition recog = results.get(0);
-            final int x = (int)(canvas.getWidth() - fgPaint.measureText(recog.getTitle())) / 2;
+            final int x = (int) (canvas.getWidth() - fgPaint.measureText(recog.getTitle())) / 2;
             canvas.drawText(recog.getTitle(), x, y, fgPaint);
         }
     }
@@ -68,6 +72,6 @@ public class RecognitionScoreView extends View implements ResultsView, View.OnCl
     @Override
     public void onClick(View view) {
         System.out.println("Hi Jason");
-        Log.d("Hi Jason","clicked capture");
+        Log.d("Hi Jason", "clicked capture");
     }
 }

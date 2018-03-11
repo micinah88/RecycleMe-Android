@@ -24,8 +24,11 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
+
 import junit.framework.Assert;
+
 import org.tensorflow.contrib.android.TensorFlowInferenceInterface;
+
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
