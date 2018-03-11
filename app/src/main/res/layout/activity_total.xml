@@ -65,7 +65,7 @@
         android:text="@string/approxRefund"
         android:textColor="@android:color/white"
         android:textSize="19dp"/>
-
+<!--
     <TextView
         android:id="@+id/txtNumItems"
         android:layout_width="wrap_content"
@@ -76,6 +76,7 @@
         android:text="@string/numOfItems"
         android:textColor="@android:color/white"
         android:textSize="19dp"/>
+        -->
 
     <TextView
         android:id="@+id/txtTotalRefund"
@@ -87,7 +88,7 @@
         android:textColor="@android:color/white"
         android:text="$"
         android:textSize="25sp"/>
-
+<!--
     <TextView
         android:id="@+id/txtTotalItems"
         android:layout_width="wrap_content"
@@ -109,6 +110,7 @@
         android:layout_marginTop="46dp"
         android:text="@string/types"
         android:textColor="@android:color/white"/>
+        -->
 
     <Button
         android:id="@+id/btnMap"

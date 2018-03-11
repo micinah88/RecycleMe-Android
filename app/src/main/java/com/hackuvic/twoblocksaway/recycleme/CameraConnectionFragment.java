@@ -351,7 +351,10 @@ public class CameraConnectionFragment extends Fragment {
                     System.out.println(name);
                     for (Type type : types) {
                         if (type.getName().equalsIgnoreCase(name)) {
+                            type.setCount(type.getCount() + 1);
                             typeDao.update(type);
+                            Toast.makeText(getActivity(), "1 " +  type.getName() + " saved",
+                                    Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
