@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -80,7 +81,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
         latLngs.add(new LatLng(48.434009, -123.365509));
         latLngs.add(new LatLng(48.537991, -123.462272));
 
-        latLngs.add(new LatLng(48.439803, -123.358931));
+        latLngs.add(new LatLng(48.439590, -123.358932));
         latLngs.add(new LatLng(48.453951, -123.375102));
         latLngs.add(new LatLng(48.448636, -123.369619));
         latLngs.add(new LatLng(48.480889, -123.388370));
@@ -170,16 +171,17 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
     private String getAddress( LatLng latLng ) {
         // 1
         Geocoder geocoder = new Geocoder( this, Locale.getDefault());
-        String addressText = "";
         List<Address> addresses;
-        Address address;
+        String address = "";
         try {
             // 2
             addresses = geocoder.getFromLocation( latLng.latitude, latLng.longitude, 1 );
-            address = addresses.get(0);
-            for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
-                    addressText += (i == 0)?address.getAddressLine(i):("\n" + address.getAddressLine(i));
-                }
+            String street = addresses.get(0).getAddressLine(0); //0 to obtain first possible address
+            address += street;
+            //address = addresses.get(0);
+            //for (int i = 0; i < address.getMaxAddressLineIndex(); i++) {
+            //        addressText += (i == 0)?address.getAddressLine(i):("\n" + address.getAddressLine(i));
+            //    }
 
             // 3
 //            if (null != addresses && !addresses.isEmpty()) {
@@ -190,8 +192,7 @@ public class MapActivity extends FragmentActivity implements OnMapReadyCallback,
 //            }
         } catch (IOException e ) {
         }
-        Toast.makeText(this, addressText, Toast.LENGTH_SHORT).show();
-        return addressText;
+        return address;
     }
 
     @Override

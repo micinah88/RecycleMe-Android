@@ -109,7 +109,8 @@
         app:layout_constraintStart_toStartOf="@+id/blackBG"
         app:layout_constraintTop_toBottomOf="@+id/logo_square"
         app:layout_constraintVertical_bias="0.122"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="onTotal"/>
 
         <Button
             android:id="@+id/btn_details"
@@ -127,7 +128,8 @@
             app:layout_constraintStart_toStartOf="@+id/blackBG"
             app:layout_constraintTop_toBottomOf="@+id/logo_square"
             app:layout_constraintVertical_bias="0.122"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:onClick="onDetails"/>
 
         <Button
             android:id="@+id/btn_location"
@@ -145,6 +147,7 @@
             app:layout_constraintStart_toStartOf="@+id/blackBG"
             app:layout_constraintTop_toBottomOf="@+id/logo_square"
             app:layout_constraintVertical_bias="0.122"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            android:onClick="onMap"/>
 
 </android.support.constraint.ConstraintLayout>
