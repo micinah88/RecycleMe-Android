@@ -1,5 +1,6 @@
 package com.hackuvic.twoblocksaway.recycleme.dao;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -30,6 +31,19 @@ public class TypeDao extends Dao {
     }
 
     /**
+     * Update an type.
+     *
+     * @param event - type object.
+     */
+    public void update(Type type) {
+        ContentValues values = new ContentValues();
+        values.put(IType.TYPE_COUNT_COLUMN, type.getCount());
+        String[] args = {String.valueOf(type.getId())};
+        Log.i(TAG, "Updating type");
+        super.update(IType.TYPE_ID_COLUMN, args, values);
+    }
+
+    /**
      * Find all types
      * @return types - a list of type if it is found
      */
@@ -39,7 +53,7 @@ public class TypeDao extends Dao {
             SQLiteDatabase sqLiteDatabase = dbHelper.getReadableDatabase();
             Cursor cursor = sqLiteDatabase.rawQuery("SELECT DISTINCT * FROM " + IType.TYPE_TABLE_NAME, null);
             int count = cursor.getCount();
-            Log.d(TAG, "Found events " + count + " row");
+            Log.d(TAG, "Found types " + count + " row");
             if (count > 0 && cursor.moveToFirst()) {
                 types = new ArrayList<>(count);
                 do {

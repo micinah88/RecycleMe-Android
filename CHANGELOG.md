@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
   - Philip Choi (PC)
   - Ryan Cha (RC)
   
+## [0.3.2]
+### Changed
+  - Add record to database
+  
 ## [0.3.1]
 ### Added
   - SQLiteDatabase
